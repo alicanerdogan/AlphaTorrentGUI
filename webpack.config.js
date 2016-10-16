@@ -1,8 +1,8 @@
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/app.jsx',
   module: {
     loaders: [{
-      test: /\.js$/,
+      test: /\.jsx$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
     }]
