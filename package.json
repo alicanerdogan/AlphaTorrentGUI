@@ -1,0 +1,24 @@
+{
+  "name": "alpha-torrent-gui",
+  "version": "0.1.0",
+  "description": "AlphaTorrent GUI",
+  "main": "main.js",
+  "author": "alicanerdogan",
+  "license": "MIT",
+  "dependencies": {
+    "electron-prebuilt": "^1.4.3",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.13.2"
+  }
+}
