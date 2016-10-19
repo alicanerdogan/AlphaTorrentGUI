@@ -1,4 +1,8 @@
 // main.js
+import './app.scss';
+import 'jquery';
+import 'bootstrap-sass';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
@@ -20,7 +24,7 @@ const TorrentListViewWrapper = React.createClass({
 
 const AddTorrentButton = React.createClass({
   render: function() {
-    return (<button onClick={this.props.addTorrent}>Add Torrent</button>)
+    return (<button className="btn btn-primary" onClick={this.props.addTorrent}>Add Torrent</button>)
   }
 });
 
