@@ -2,10 +2,10 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './src/app.jsx',
+  entry: './src/app.js',
   module: {
     loaders: [{
-      test: /\.jsx$/,
+      test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
     }, {

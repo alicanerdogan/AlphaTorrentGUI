@@ -12,6 +12,9 @@
         },
         "sourceType": "module"
     },
+    "plugins": [
+        "react"
+    ],
     "rules": {
         "no-const-assign": "warn",
         "no-this-before-super": "warn",
@@ -20,5 +23,6 @@
         "no-unused-vars": "warn",
         "constructor-super": "warn",
         "valid-typeof": "warn"
-    }
+    },
+    "extends": ["plugin:react/recommended"]
 }
