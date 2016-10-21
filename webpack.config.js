@@ -3,6 +3,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/app.js',
+  devtool: 'source-map',
   module: {
     loaders: [{
       test: /\.jsx?$/,
@@ -27,5 +28,6 @@ module.exports = {
       $: 'jquery',
       jquery: 'jquery'
     })
-  ]
+  ],
+  target: 'electron'
 };

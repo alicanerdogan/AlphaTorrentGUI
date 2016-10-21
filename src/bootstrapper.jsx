@@ -7,11 +7,18 @@ import viewActionsReducer from './reducers/viewActionsReducer';
 let store = createStore(viewActionsReducer);
 
 import AddTorrentButtonContainer from './containers/AddTorrentButtonContainer';
+import OpenTorrentButtonContainer from './containers/OpenTorrentButtonContainer';
 import TorrentListViewContainer from './containers/TorrentListViewContainer';
 
 const App = React.createClass({
   render: function() {
-    return (<div><TorrentListViewContainer/><AddTorrentButtonContainer/></div>);
+    return (
+      <div>
+        <TorrentListViewContainer/>
+        <AddTorrentButtonContainer/>
+        <OpenTorrentButtonContainer/>
+      </div>
+      );
   }
 });
 
