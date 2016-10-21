@@ -16,6 +16,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "debug": "yarn run build && yarn run start",
     "start": "electron .",
     "test": "jest"
   },
