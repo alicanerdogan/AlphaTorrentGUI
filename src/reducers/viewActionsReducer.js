@@ -1,11 +1,15 @@
+import Immutable from 'immutable';
 import { type as addTorrentType } from './../actions/addTorrent';
 
-export default function (state = {torrents: []}, action) {
+const DEFAULT_STATE = Immutable.fromJS({
+  torrents: []
+});
+
+export default function (state = DEFAULT_STATE, action) {
+  if(!action) return state;
   switch (action.type) {
     case addTorrentType:
-      return {
-        torrents: state.torrents.concat([action.torrent])
-      }
+      return state.updateIn(['torrents'], list => list.push(action.torrent));
     default:
       return state;
   }
