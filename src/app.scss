@@ -1,2 +1,26 @@
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import './styles/mixins.scss';
+@import './styles/colors.scss';
+
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $transparent;
+  height: 100%;
+}
+
+.window {
+  @include border-radius(3px);
+  background-color: white;
+  height: 100%;
+  overflow-y: hidden;
+  
+  #content {
+    @include border-radius(3px);
+    background-color: white;
+  }
+}
