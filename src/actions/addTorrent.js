@@ -1,8 +1,8 @@
-export const type = 'ADD_TORRENT';
+export const ADD_TORRENT = 'ADD_TORRENT';
 
 export default function (torrent) {
   return {
-    type: type,
+    type: ADD_TORRENT,
     torrent
   };
 }

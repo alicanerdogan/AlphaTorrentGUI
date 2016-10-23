@@ -8,18 +8,18 @@ export const WindowActionButton = React.createClass({
 
 export const Minimize = React.createClass({
   render: function() {
-    return (<WindowActionButton content="_"/>);
+    return (<WindowActionButton content="_" {...this.props}/>);
   }
 });
 
 export const Maximize = React.createClass({
   render: function() {
-    return (<WindowActionButton content="☐"/>);
+    return (<WindowActionButton content="☐" {...this.props}/>);
   }
 });
 
 export const Close = React.createClass({
   render: function() {
-    return (<WindowActionButton content="✕"/>);
+    return (<WindowActionButton content="✕" {...this.props}/>);
   }
 });
