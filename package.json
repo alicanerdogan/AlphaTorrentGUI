@@ -8,6 +8,7 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "electron-prebuilt": "^1.4.3",
+    "immutable": "^3.8.1",
     "jquery": "2.2.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -16,6 +17,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "debug": "yarn build && yarn start",
     "start": "electron .",
     "test": "jest"
   },

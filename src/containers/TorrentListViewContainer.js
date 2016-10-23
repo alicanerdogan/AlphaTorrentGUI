@@ -3,7 +3,7 @@ import TorrentListViewWrapper from '../components/TorrentListViewWrapper.jsx';
 
 const mapStateToProps = function(state) {
   return {
-    torrents: state.torrents
+    torrents: state.get('torrents')
   };
 };
 
