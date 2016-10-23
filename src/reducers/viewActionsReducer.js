@@ -2,6 +2,8 @@ import Immutable from 'immutable';
 import { type as addTorrentType } from './../actions/addTorrent';
 
 const DEFAULT_STATE = Immutable.fromJS({
+  name: 'AlphaTorrent',
+  version: '0.1.0',
   torrents: []
 });
 

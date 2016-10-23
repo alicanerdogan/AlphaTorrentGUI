@@ -6,17 +6,15 @@ import { Provider } from 'react-redux';
 import viewActionsReducer from './reducers/viewActionsReducer';
 let store = createStore(viewActionsReducer);
 
-import AddTorrentButtonContainer from './containers/AddTorrentButtonContainer';
-import OpenTorrentButtonContainer from './containers/OpenTorrentButtonContainer';
-import TorrentListViewContainer from './containers/TorrentListViewContainer';
+import WindowHeader from './components/WindowHeader.jsx';
+import WindowBody from './components/WindowBody.jsx';
 
 const App = React.createClass({
   render: function() {
     return (
       <div>
-        <TorrentListViewContainer/>
-        <AddTorrentButtonContainer/>
-        <OpenTorrentButtonContainer/>
+        <WindowHeader/>
+        <WindowBody/>
       </div>
       );
   }

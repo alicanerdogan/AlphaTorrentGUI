@@ -15,12 +15,36 @@ body {
 
 .window {
   @include border-radius(3px);
+  border: 1px solid $dark-gray;
   background-color: white;
   height: 100%;
   overflow-y: hidden;
-  
-  #content {
-    @include border-radius(3px);
-    background-color: white;
+
+  header {
+    padding: 5px;
+    
+    h1 {
+      display: inline-block;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .btn-group.btn-group-xs.actions {
+      float: right;
+      height: 19px;
+
+      .btn {
+        height: 19px;
+      }
+    }
+  }
+
+  .window-body {
+    padding: 5px;
+
+    #content {
+      @include border-radius(3px);
+      background-color: white;
+    }
   }
 }
