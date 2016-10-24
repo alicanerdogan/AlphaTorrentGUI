@@ -3,7 +3,7 @@ import WindowTitle from '../components/WindowTitle.jsx';
 
 const mapStateToProps = function(state) {
   return {
-    text: `${state.get('name')} ${state.get('version')}`
+    text: `${state.window.get('name')} ${state.window.get('version')}`
   };
 };
 

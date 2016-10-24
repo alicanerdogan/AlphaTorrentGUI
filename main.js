@@ -29,3 +29,11 @@ app.on('activate', () => {
 ipcMain.on('close-request', () => {
   app.quit();
 });
+
+ipcMain.on('minimize-request', () => {
+  win.minimize();
+});
+
+ipcMain.on('maximize-request', () => {
+  win.maximize();
+});

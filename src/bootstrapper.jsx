@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import reducer from './reducers/combinedReducer';
 
-import viewActionsReducer from './reducers/viewActionsReducer';
-let store = createStore(viewActionsReducer);
+let store = createStore(reducer);
 
 import WindowHeader from './components/WindowHeader.jsx';
 import WindowBody from './components/WindowBody.jsx';
