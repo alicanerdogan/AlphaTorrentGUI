@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "command": "yarn",
+  "isShellCommand": true,
+  "showOutput": "always",
+  "suppressTaskName": true,
+  "tasks": [
+    {
+      "taskName": "test",
+      "args": ["run", "test"]
+    },
+    {
+      "taskName": "debug",
+      "args": ["run", "debug"]
+    },
+    {
+      "taskName": "start",
+      "args": ["run", "start"]
+    },
+    {
+      "taskName": "build",
+      "args": ["run", "build"]
+    },
+    {
+      "taskName": "install",
+      "args": ["install"]
+    }
+  ]
+}
