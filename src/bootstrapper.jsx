@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers/combinedReducer';
+import mainProcessListener from './electron_api/mainProcessListener';
 
 let store = createStore(reducer);
+
+mainProcessListener((action) => store.dispatch(action));
 
 import WindowHeader from './components/WindowHeader.jsx';
 import WindowBody from './components/WindowBody.jsx';

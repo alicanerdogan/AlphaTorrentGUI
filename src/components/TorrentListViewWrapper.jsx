@@ -4,7 +4,7 @@ import TorrentListView from './TorrentListView.jsx';
 export default React.createClass({
   render: function () {
     let torrentListViews = this.props.torrents.map((torrent) => {
-      return (<TorrentListView name={torrent.name}/>);
+      return (<TorrentListView torrent={torrent}/>);
     });
     return (<div>{torrentListViews}</div>);
   }
