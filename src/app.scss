@@ -4,6 +4,8 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+@import './styles/fonts.scss';
+
 html {
   height: 100%;
 }
@@ -11,6 +13,7 @@ html {
 body {
   background-color: $transparent;
   height: 100%;
+  font-family: oxygen;
 }
 
 .window {
