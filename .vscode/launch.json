@@ -4,11 +4,11 @@
     {
       "name": "Debug Main Process",
       "type": "node",
+      "args": ["--harmony"],
       "request": "launch",
       "cwd": "${workspaceRoot}",
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
-      "program": "${workspaceRoot}/main.js",
-      "preLaunchTask": "build"
+      "program": "${workspaceRoot}/main.js"
     }
   ]
 }

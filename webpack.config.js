@@ -29,5 +29,6 @@ module.exports = {
       jquery: 'jquery'
     })
   ],
+  watch: true,
   target: 'electron'
 };
