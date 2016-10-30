@@ -3,8 +3,12 @@ import React from 'react';
 export default React.createClass({
   render: function() {
     let categoryListItems = this.props.categories.map((category) => {
-      return (<li className="list-group-item"><span className="badge">{category.count}</span>{category.name}</li>);
+      let className = 'list-group-item ';
+      if(category.active) {
+        className += 'active';
+      }
+      return (<a className={className}><span className="badge">{category.count}</span>{category.name}</a>);
     });
-    return(<ul className="list-group">{categoryListItems}</ul>);
+    return(<div className="list-group">{categoryListItems}</div>);
   }
 });

@@ -17,6 +17,12 @@ body {
   background-color: $transparent;
   height: 100%;
   font-family: oxygen;
+  -webkit-user-select: none;
+  cursor: default;
+
+  a:hover, button.btn:hover {
+    cursor: default;
+  }
 }
 
 #content {
@@ -37,6 +43,7 @@ body {
 
   header {
     padding: 5px 5px 8px 8px;
+    -webkit-app-region: drag;
     
     h1 {
       display: inline-block;
@@ -47,6 +54,7 @@ body {
     .actions {
       float: right;
       height: 19px;
+      -webkit-app-region: no-drag;
 
       .btn {
         height: 19px;
@@ -69,14 +77,27 @@ body {
       background-color: $light-bg;
       padding: 8px;
 
-      li.list-group-item {
-        border: none;
+      a.list-group-item {
+        border-color: $dark-bg;
         background-color: $dark-bg;
         color: $white;
         padding-top: 6px;
         padding-bottom: 6px;
         padding-left: 6px;
         padding-right: 6px;
+
+        &:hover {
+          background-color: $medium-bg;
+        }
+
+        &.active, &.active:hover {
+          background-color: $blue;
+          
+          .badge {
+            color: $white;
+            background-color: $dark-bg;
+          }
+        }
 
         .badge {
           background-color: $blue;
@@ -147,4 +168,10 @@ button.btn
   height: 25px;
   margin-left: 70px;
   box-shadow: 0 3px $light-bg;
+
+  p {
+    margin: 3px;
+    font-weight: bold;
+    font-size: 14px;
+  }
 }

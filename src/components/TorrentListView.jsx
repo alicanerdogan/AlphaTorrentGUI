@@ -9,7 +9,7 @@ export default React.createClass({
       <div className="torrent-list-view-item">
         <p>{this.props.torrent.name}</p>
         <TorrentActions/>
-        <ProgressBar percentage={downloadPercentage}/>
+        <ProgressBar percentage={downloadPercentage} active={this.props.torrent.isDownloading}/>
       </div>
     ); 
   }
