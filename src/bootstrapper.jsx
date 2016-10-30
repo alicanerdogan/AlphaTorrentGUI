@@ -15,7 +15,7 @@ import WindowBody from './components/WindowBody.jsx';
 const App = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className="app-container">
         <WindowHeader/>
         <WindowBody/>
       </div>

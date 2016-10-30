@@ -4,7 +4,7 @@ import TorrentListViewWrapper from '../components/TorrentListViewWrapper.jsx';
 const mapStateToProps = function(state) {
   const torrents = state.view.get('torrents').toSetSeq();
   return {
-    torrents: torrents
+    torrents: torrents.toJS()
   };
 };
 

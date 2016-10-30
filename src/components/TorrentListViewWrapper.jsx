@@ -6,6 +6,6 @@ export default React.createClass({
     let torrentListViews = this.props.torrents.map((torrent) => {
       return (<TorrentListView torrent={torrent}/>);
     });
-    return (<div>{torrentListViews}</div>);
+    return (<div className="torrent-list-view">{torrentListViews}</div>);
   }
 });

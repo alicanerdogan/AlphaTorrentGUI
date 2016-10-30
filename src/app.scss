@@ -1,6 +1,9 @@
 @import './styles/mixins.scss';
 @import './styles/colors.scss';
 
+$brand-primary: $blue;
+$brand-success: $lighter-bg;
+$brand-info: lighten($blue, 10%);
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
@@ -16,15 +19,24 @@ body {
   font-family: oxygen;
 }
 
+#content {
+  height: 100%;
+}
+
+.app-container {
+  height: 100%;
+}
+
 .window {
-  @include border-radius(3px);
-  border: 1px solid $dark-gray;
-  background-color: white;
+  @include border-radius(5px);
+  border: 1px solid $medium-bg;
+  background-color: $dark-bg;
+  color: $white;
   height: 100%;
   overflow-y: hidden;
 
   header {
-    padding: 5px;
+    padding: 8px;
     
     h1 {
       display: inline-block;
@@ -43,11 +55,80 @@ body {
   }
 
   .window-body {
-    padding: 5px;
+    background-color: $medium-bg;
+    height: 100%;
 
-    #content {
-      @include border-radius(3px);
-      background-color: white;
+    $left-panel-width: 300px;
+    .left-panel {
+      float: left;
+      width: $left-panel-width;
+      height: 100%;
+      background-color: $light-bg;
+      padding: 8px;
+
+      li.list-group-item {
+        border: none;
+        background-color: $dark-bg;
+        color: $sub-gray;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 6px;
+        padding-right: 6px;
+
+        .badge {
+          background-color: $blue;
+        }
+      }
+    }
+
+    .main-panel {
+      height: 100%;
+      padding: 8px;
+      margin-left: $left-panel-width;
+
+      .torrent-actions {
+        float: left;
+        
+        .torrent-action {
+          height: 25px;
+          //width: 20px;
+          padding: 2px 6px;
+          margin-right: 3px;
+        }
+      }
     }
   }
+}
+
+button.btn
+{
+  color: #fff;
+  border: none;
+  border-radius: 1px;
+  box-shadow: 0 3px $light-bg;
+
+  &.btn-primary
+  {
+    outline: none;
+  }
+
+  &:focus, &:hover, &:active
+  {
+    outline: none;
+  }
+
+  &:active
+  {
+    box-shadow: 0 1px $light-bg;
+    transform: translateY(2px);
+  }
+}
+
+.progress {
+  background: $lighte-bg;
+  border: 0px solid $white;
+  border-radius: 2px;
+  height: 25px;
+  margin-left: 70px;
+  box-shadow: 0 3px $light-bg;
 }

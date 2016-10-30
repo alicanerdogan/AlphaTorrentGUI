@@ -2,7 +2,7 @@ import React from 'react';
 
 export const WindowActionButton = React.createClass({
   render: function() {
-    return(<button type="button" className="btn btn-default" onClick={this.props.onClick}>{this.props.content}</button>);
+    return(<button type="button" className="btn btn-primary" onClick={this.props.onClick}>{this.props.content}</button>);
   }
 });
 

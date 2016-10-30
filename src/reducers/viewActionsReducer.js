@@ -3,7 +3,26 @@ import { ADD_TORRENT } from './../actions/addTorrent';
 import { UPDATE_TORRENT_STATUS } from './../actions/updateTorrentStatus';
 
 const DEFAULT_STATE = Immutable.fromJS({
-  torrents: {}
+  torrents: {
+    '00aabb': {
+      hash: '00aabb',
+      name: 'Iron Man 2',
+      downloaded: 14,
+      pieceCount: 20
+    }
+  },
+  categories: [{
+    name: 'Downloading',
+    count: 2
+  },
+  {
+    name: 'Completed',
+    count: 15
+  },
+  {
+    name: 'Paused',
+    count: 0
+  }]
 });
 
 export default function (state = DEFAULT_STATE, action) {
