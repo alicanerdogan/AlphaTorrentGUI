@@ -74,6 +74,7 @@ function createTorrentStatus(torrent) {
     pieceCount: 0,
     downloaded: 0,
     size: torrent.size,
+    isDownloading: true
   }
 }
 
@@ -84,3 +85,7 @@ function createHashSignature(infoHash) {
   });
   return signature;
 }
+
+ipcMain.on('open-in-folder', (event, filepath) => {
+  
+});
