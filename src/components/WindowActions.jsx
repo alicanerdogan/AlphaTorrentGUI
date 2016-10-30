@@ -4,7 +4,7 @@ import { MaximizeButton, MinimizeButton, CloseButton } from './../containers/Win
 export default React.createClass({
   render: function() {
     return(
-      <div className="btn-group btn-group-xs actions" role="group">
+      <div className="actions">
         <MinimizeButton/>
         <MaximizeButton/>
         <CloseButton/>

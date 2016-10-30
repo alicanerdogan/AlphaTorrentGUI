@@ -15,17 +15,14 @@ export default React.createClass({
         <TorrentAction><i className="fa fa-pause" aria-hidden="true"></i></TorrentAction>
         <TorrentAction><i className="fa fa-stop" aria-hidden="true"></i></TorrentAction>
         <div className="btn-group">
-  <button type="button" className="btn btn-primary torrent-action dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
-  </button>
-  <ul className="dropdown-menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" className="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
+          <button type="button" className="btn btn-primary torrent-action dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </button>
+          <ul className="dropdown-menu">
+            <li><a href="#"><i className="fa fa-folder-open fa-fw"></i> Open In Folder</a></li>
+            <li><a href="#"><i className="fa fa-trash fa-fw"></i> Delete</a></li>
+          </ul>
+        </div>
       </div>
     );
   }

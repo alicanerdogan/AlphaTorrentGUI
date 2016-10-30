@@ -36,7 +36,7 @@ body {
   overflow-y: hidden;
 
   header {
-    padding: 8px;
+    padding: 5px 5px 8px 8px;
     
     h1 {
       display: inline-block;
@@ -44,12 +44,15 @@ body {
       margin: 0;
     }
 
-    .btn-group.btn-group-xs.actions {
+    .actions {
       float: right;
       height: 19px;
 
       .btn {
         height: 19px;
+        margin-left: 5px;
+        padding: 2px 6px;
+        font-size: 10px;
       }
     }
   }
@@ -69,7 +72,7 @@ body {
       li.list-group-item {
         border: none;
         background-color: $dark-bg;
-        color: $sub-gray;
+        color: $white;
         padding-top: 6px;
         padding-bottom: 6px;
         padding-left: 6px;
@@ -96,6 +99,19 @@ body {
           margin-right: 3px;
         }
       }
+    }
+  }
+}
+
+ul.dropdown-menu {
+  background-color: $blue;
+  border-style: none;
+  color: $white;
+
+  > li {
+    > a {
+      color: $white;
+      padding: 3px 10px;
     }
   }
 }
