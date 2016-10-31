@@ -3,6 +3,6 @@ import CategoryList from './CategoryList.jsx';
 
 export default React.createClass({
   render: function() {
-    return(<div className="left-panel"><CategoryList categories={this.props.categories}/></div>);
+    return(<div className="left-panel"><CategoryList categories={this.props.categories} selectCategory={this.props.selectCategory}/></div>);
   }
 });

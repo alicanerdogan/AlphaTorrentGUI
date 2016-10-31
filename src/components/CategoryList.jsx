@@ -7,7 +7,8 @@ export default React.createClass({
       if(category.active) {
         className += 'active';
       }
-      return (<a className={className}><span className="badge">{category.count}</span>{category.name}</a>);
+      let selectCategory = () => this.props.selectCategory(category.name);
+      return (<a className={className} onClick={selectCategory}><span className="badge">{category.count}</span>{category.name}</a>);
     });
     return(<div className="list-group">{categoryListItems}</div>);
   }

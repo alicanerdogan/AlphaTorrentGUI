@@ -1,6 +1,7 @@
 import Immutable from 'immutable';
 import { ADD_TORRENT } from './../actions/addTorrent';
 import { UPDATE_TORRENT_STATUS } from './../actions/updateTorrentStatus';
+import { SELECT_CATEGORY } from './../actions/selectCategory';
 
 const DEFAULT_STATE = Immutable.fromJS({
   torrents: {
@@ -10,7 +11,10 @@ const DEFAULT_STATE = Immutable.fromJS({
       downloaded: 14,
       pieceCount: 20,
       size: 12003229,
-      isDownloading: true
+      isDownloading: false,
+      isCompleted: true,
+      isPaused: false,
+      subcategory: null
     },
     '00aacc': {
       hash: '00aacc',
@@ -18,25 +22,45 @@ const DEFAULT_STATE = Immutable.fromJS({
       downloaded: 3,
       pieceCount: 10,
       size: 12003229,
-      isDownloading: false
+      isDownloading: true,
+      isCompleted: false,
+      isPaused: false,
+      subcategory: null
+    },
+    '00aaff': {
+      hash: '00aacc',
+      name: 'Last Week Tonight with John Oliver s03e23',
+      downloaded: 3,
+      pieceCount: 10,
+      size: 12003229,
+      isDownloading: false,
+      isCompleted: false,
+      isPaused: true,
+      subcategory: null
     }
   },
   categories: [{
-    name: 'All',
-    count: 17
-  },{
-    name: 'Downloading',
-    count: 2,
-    active: true
+    name: 'All'
   },
   {
-    name: 'Completed',
-    count: 15
+    name: 'Downloading'
   },
   {
-    name: 'Paused',
-    count: 0
-  }]
+    name: 'Completed'
+  },
+  {
+    name: 'Paused'
+  },
+  {
+    name: 'TV'
+  },
+  {
+    name: 'Movies'
+  },
+  {
+    name: 'Games'
+  }],
+  selectedCategory: 'Downloading'
 });
 
 export default function (state = DEFAULT_STATE, action) {
@@ -46,6 +70,8 @@ export default function (state = DEFAULT_STATE, action) {
       return state.updateIn(['torrents', action.torrent.hash], () => action.torrent);
     case UPDATE_TORRENT_STATUS:
       return state.updateIn(['torrents', action.status.hash], () => action.status);
+    case SELECT_CATEGORY:
+      return state.set('selectedCategory', action.category);
     default:
       return state;
   }
