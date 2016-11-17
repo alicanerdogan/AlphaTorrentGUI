@@ -1,7 +1,10 @@
 import Immutable from 'immutable';
 import { ADD_TORRENT } from './../actions/addTorrent';
+import { SHOW_TORRENT } from './../actions/showTorrent';
+import { CANCEL_TORRENT } from './../actions/cancelTorrent';
 import { UPDATE_TORRENT_STATUS } from './../actions/updateTorrentStatus';
 import { SELECT_CATEGORY } from './../actions/selectCategory';
+import { ipcRenderer } from 'electron';
 
 const DEFAULT_STATE = Immutable.fromJS({
   torrents: {
@@ -29,7 +32,7 @@ const DEFAULT_STATE = Immutable.fromJS({
     },
     '00aaff': {
       hash: '00aacc',
-      name: 'Last Week Tonight with John Oliver s03e23',
+      name: 'Westworld s01e05',
       downloaded: 3,
       pieceCount: 10,
       size: 12003229,
@@ -60,14 +63,24 @@ const DEFAULT_STATE = Immutable.fromJS({
   {
     name: 'Games'
   }],
-  selectedCategory: 'Downloading'
+  selectedCategory: 'Downloading',
+  bottomPanel: {
+    isEnabled: false,
+    torrent: null
+  }
 });
 
 export default function (state = DEFAULT_STATE, action) {
   if(!action) return state;
   switch (action.type) {
     case ADD_TORRENT:
-      return state.updateIn(['torrents', action.torrent.hash], () => action.torrent);
+      ipcRenderer.send('start-torrent', action.torrent);
+      state = state.updateIn(['torrents', action.torrent.hash], () => action.torrent);
+      return state.set('bottomPanel', {isEnabled: false, torrent: null});
+    case SHOW_TORRENT:
+      return state.set('bottomPanel', {isEnabled: true, torrent: action.torrent});
+    case CANCEL_TORRENT:
+      return state.set('bottomPanel', {isEnabled: false, torrent: null});
     case UPDATE_TORRENT_STATUS:
       return state.updateIn(['torrents', action.status.hash], () => action.status);
     case SELECT_CATEGORY:

@@ -41,9 +41,17 @@ ipcMain.on('maximize-request', () => {
 const Torrent = require('alpha-torrent/lib/torrent');
 const TorrentConnection = require('alpha-torrent/lib/torrentConnection');
 const torrentConnections = [];
+const torrents = {};
 
 ipcMain.on('open-torrent', (event, filepath) => {
   const torrent = new Torrent.default(filepath);
+  let torrentStatus = createTorrentStatus(torrent);
+  torrents[torrentStatus.hash] = torrent;
+  win.webContents.send('torrent-opened', torrentStatus);
+});
+
+ipcMain.on('start-torrent', (event, torrentStatus) => {
+  const torrent = torrents[torrentStatus.hash];
   const torrentConnection = new TorrentConnection.default(torrent);
   const status = createTorrentStatus(torrent);
   status.pieceCount = torrentConnection.pieces.pieceCount;
@@ -64,26 +72,19 @@ ipcMain.on('open-torrent', (event, filepath) => {
     status.downloaded = torrentConnection.pieces.completed;
     win.webContents.send('update-torrent', status);
   });
-  win.webContents.send('torrent-opened', status);
 });
 
 function createTorrentStatus(torrent) {
   return {
-    name: torrent.torrentInfo.info.name,
-    hash: createHashSignature(torrent.infoHash),
+    name: torrent.name,
+    hash: torrent.hashSignature,
+    files: torrent.files.concat([]),
     pieceCount: 0,
     downloaded: 0,
     size: torrent.size,
+    sizeAsString: torrent.sizeAsString,
     isDownloading: true
   }
-}
-
-function createHashSignature(infoHash) {
-  let signature = '';
-  infoHash.forEach(function(byte) {
-    signature += ("00" + byte.toString(16)).substr(-2);
-  });
-  return signature;
 }
 
 ipcMain.on('open-in-folder', (event, filepath) => {
