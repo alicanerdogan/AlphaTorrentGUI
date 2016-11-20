@@ -69,9 +69,11 @@ body {
   .window-body {
     background-color: $medium-bg;
     height: 100%;
+    padding-bottom: 35px;
 
     $left-panel-width: 300px;
     .left-panel {
+      position: relative;
       float: left;
       width: $left-panel-width;
       height: 100%;
@@ -105,11 +107,56 @@ body {
           background-color: $blue;
         }
       }
+
+      #add-torrent {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: none;
+        box-shadow: none;
+
+        &:active
+        {
+          box-shadow: none;
+          transform: none;
+        }
+
+        &:hover {
+          p {
+            text-shadow: 1px 1px $dark-bg, -1px -1px $dark-bg;
+          }
+        }
+
+        p {
+          color: $blue;
+          margin: 0;
+          padding: 0;
+          font-family: oxygen-bold;
+
+          .text {
+            padding-left: 20px;
+            vertical-align: middle;
+            font-size: 24px;
+            height: 24px;
+            line-height: 24px;
+          }
+
+          .icon {
+            bottom: -2px;
+            position: relative;
+            vertical-align: middle;
+            height: 50px;
+            line-height: 50px;
+            font-size: 50px;
+          }
+        }
+      }
     }
 
     .main-panel {
       height: 100%;
-      padding: 8px 8px 45px 8px;
+      padding: 8px 8px 8px 8px;
       margin-left: $left-panel-width;
       overflow-y: auto;
 
